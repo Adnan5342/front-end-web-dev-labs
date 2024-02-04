@@ -1,0 +1,54 @@
+nav {
+    display: flex;
+    flex-direction: column;
+
+    /*more custom styles*/
+
+    position: static;
+    width: 100%;
+    top: 0;
+    transform: translateX(0);
+    transition: 0.5s;
+}
+
+nav.open {
+    transform: translateX(0);
+}
+
+#menuToggler {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+menu {
+    transform: translateX(100vw);
+}
+
+menu.open {
+    transform: translateX(0);
+}
+
+nav a {
+    background-color: beige;
+	color: black;
+	padding: 0.25em 0.5em;
+	text-decoration: none;
+	transition: background-color 0.5s;
+}
+
+nav a:hover {
+	background-color: lightskyblue;
+}
+
+@media screen and (min-width: 500px) {
+    #menuToggler {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+    }
+}
