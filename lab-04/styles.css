@@ -1,54 +1,78 @@
-nav {
-    display: flex;
-    flex-direction: column;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
 
-    /*more custom styles*/
-
-    position: static;
-    width: 100%;
-    top: 0;
-    transform: translateX(0);
-    transition: 0.5s;
-}
-
-nav.open {
-    transform: translateX(0);
+body {
+	font-family: Montserrat, sans-serif;
+	margin: 0;
+	background-color:black;
 }
 
 #menuToggler {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1;
+	position: fixed;
+	top: 0.5rem;
+	right: 0.5rem;
+	background-color: rgba(255, 0, 0, 0.5);
+	color: white;
+	font-size: 3em;
+	text-align: right;
+	line-height: 1em;
+	padding: 0 1rem;
+	z-index: 1;
 }
 
-menu {
-    transform: translateX(100vw);
+nav {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	background-color: red;
+	opacity: 0;
+	transform: translateX(100vw);
+	transition: transform 0.4s, opacity 0.6s;
 }
 
-menu.open {
-    transform: translateX(0);
+nav.open {
+	transition: transform 0.4s, opacity 0.2s;
+	transform: none;
+	opacity: 1;
 }
 
 nav a {
-    background-color: beige;
-	color: black;
-	padding: 0.25em 0.5em;
+	font-size: 2em;
 	text-decoration: none;
-	transition: background-color 0.5s;
+	padding: 0.5em 1em;
+	color: black;
+	text-align: center;
+	flex-grow: 1;
 }
 
-nav a:hover {
-	background-color: lightskyblue;
+p {
+	padding: 0 1em;
+	max-width: 600px;
+	margin: 1em auto;
+    color: white;
 }
 
-@media screen and (min-width: 500px) {
-    #menuToggler {
-        display: none;
-    }
+@media screen and (min-width: 515px) {
 
-    nav {
-        display: flex;
-        flex-direction: row;
-    }
+	#menuToggler {
+		display: none;
+	}
+
+	nav {
+		display: flex;
+		flex-direction: row;
+		transform: none;
+		opacity: 1;
+		height: auto;
+		position: static;
+		justify-content: center;
+	}
+
+	nav a {
+		font-size: 1.3em;
+		flex-grow: 0;
+	}
+
 }
